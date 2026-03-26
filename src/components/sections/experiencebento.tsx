@@ -50,20 +50,20 @@ function TimelineCard({ job, index }: { job: any; index: number }) {
           </h3>
           <p className="text-muted font-medium text-lg">{job.role}</p>
         </div>
-        
-        {/* Smart Description Renderer */}
+    
+
         <div className="mb-6 space-y-3">
-        {Array.isArray(job.description) ? (
+        {Array.isArray(job.highlights) ? (
             // If it's an array, map through it
-            job.description.map((desc: string, i: number) => (
+            job.highlights.map((highlight: string, i: number) => (
             <p key={i} className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                {desc}
+                {highlight}
             </p>
             ))
         ) : (
             // If it's a single string, render it with whitespace-pre-line to respect \n line breaks
             <p className="text-muted-foreground leading-relaxed text-sm md:text-base whitespace-pre-line">
-            {job.description}
+            {job.highlights}
             </p>
         )}
         </div>

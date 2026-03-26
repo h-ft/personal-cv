@@ -35,6 +35,7 @@ export const experiences: Experience[] = [
     period: "July 2025 - Present",
     description: "Handling the core BNPL team, designing infrastructure requirements and database schemas.",
     highlights: [
+      "Handling the core BNPL team, designing infrastructure requirements and database schemas.",
       "Successfully eliminated a critical bottleneck resulting in >90% latency improvement within 3 months.",
       "Actively developing and maintaining core BNPL services.",
       "Serving as PIC between multiple teams across different regions."
