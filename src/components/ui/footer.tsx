@@ -1,34 +1,59 @@
-// src/components/ui/Footer.tsx
-import { personalInfo } from "@/data/resume";
+import Link from "next/link";
+
+// Custom SVG Icons (No external library needed!)
+function GithubIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+      <path d="M9 18c-4.51 2-5-2-7-2"/>
+    </svg>
+  );
+}
+
+function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+      <rect width="4" height="12" x="2" y="9"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>
+  );
+}
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-  
   return (
-    <footer className="bg-card border-t border-border py-12 px-6 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-4 md:mb-0 text-center md:text-left">
-          <h2 className="text-xl font-bold text-primary">{personalInfo.name}</h2>
-          <p className="text-sm text-muted mt-1">{personalInfo.title}</p>
-        </div>
+    // We use bg-transparent so it inherits the dark body background. 
+    // The border-t border-white/10 adds a super subtle line to separate it from the content above.
+    <footer className="w-full py-12 mt-20 bg-transparent border-t border-white/10 flex flex-col items-center justify-center gap-6 relative z-10">
+      
+      {/* Social Links */}
+      <div className="flex items-center gap-6">
+        <Link 
+          href="https://www.linkedin.com/in/henryfebrian/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-muted-foreground hover:text-white transition-all duration-300 hover:-translate-y-1"
+          aria-label="LinkedIn"
+        >
+          <LinkedinIcon className="w-6 h-6" />
+        </Link>
         
-        <div className="flex space-x-6">
-          <a href={`mailto:${personalInfo.email}`} className="text-muted hover:text-primary transition-colors text-sm font-medium">
-            Email
-          </a>
-          <a href="https://linkedin.com/in/henryfebrian" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors text-sm font-medium">
-            LinkedIn
-          </a>
-          <a href="https://github.com/h-ft" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors text-sm font-medium">
-            GitHub
-          </a>
-        </div>
+        <Link 
+          href="https://github.com/h-ft/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-muted-foreground hover:text-white transition-all duration-300 hover:-translate-y-1"
+          aria-label="GitHub"
+        >
+          <GithubIcon className="w-6 h-6" />
+        </Link>
       </div>
-      <div className="max-w-7xl mx-auto mt-8 text-center md:text-left border-t border-border pt-8">
-        <p className="text-xs text-muted/60">
-          © {currentYear} {personalInfo.name}. Built with Next.js, Tailwind CSS, and Framer Motion.
-        </p>
-      </div>
+
+      {/* Copyright Text */}
+      <p className="text-muted-foreground text-sm text-center px-4">
+        © {new Date().getFullYear()} Henry Febrian
+      </p>
+      
     </footer>
   );
 }

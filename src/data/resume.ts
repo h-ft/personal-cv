@@ -103,6 +103,7 @@ export interface Certification {
   issuer: string;
   year?: string;
   score?: string;
+  url?: string;
 }
 
 export interface Language {
@@ -114,16 +115,19 @@ export const certifications: Certification[] = [
   {
     title: "Scrum Foundation Professional Certificate - SFPC",
     issuer: "Certiprof",
+    url: "https://www.credly.com/badges/419a906a-4f87-4c9c-8d97-3d6122292e94" 
   },
   {
     title: "Lean Six Sigma White Belt Professional Certification - LSSWBPC",
     issuer: "Certiprof",
+    url: "https://www.credly.com/earner/earned/badge/f25c75dd-05d3-4884-b9bc-1f0014317f5e"
   },
   {
     title: "English Proficiency Certificate",
     issuer: "DET",
     year: "est. 2024",
     score: "155/160",
+    url: "https://certs.duolingo.com/08fa22adcfb955bd95ff9a0cdd30f826"
   },
   {
     title: "German B2 Certificate",
@@ -146,3 +150,8 @@ export const languages: Language[] = [
     proficiency: "Native Proficiency",
   }
 ];
+
+export const socials = {
+  linkedin: "https://www.linkedin.com/in/henryfebrian/",
+  github: "https://github.com/h-ft/"
+};
