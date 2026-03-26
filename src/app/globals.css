@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "San Francisco", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Semantic Color Mapping for Tailwind v4 */
+  --color-background: var(--bg-base);
+  --color-foreground: var(--text-main);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border-subtle);
+  --color-primary: var(--accent-primary);
+  --color-primary-foreground: var(--accent-foreground);
+  --color-highlight: var(--accent-highlight);
+  --color-card: var(--bg-card);
+}
+
+@layer base {
+  :root {
+    /* --- Light Mode (Apple Crisp) --- */
+    --bg-base: #FBFBFD;
+    --bg-card: #FFFFFF;
+    --text-main: #111827;
+    --text-muted: #5D5D5D;
+    --border-subtle: #E5E7EB;
+    
+    --accent-primary: #09203F; /* Gentian Blue */
+    --accent-foreground: #FFFFFF; /* White */
+    --accent-highlight: #254785; 
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* --- Dark Mode (Deep Gentian) --- */
+      --bg-base: #09203F; /* Pure Gentian Blue Background */
+      --bg-card: #1C3563; /* Slightly lighter blue for elevated cards */
+      --text-main: #FFFFFF; /* Pure White text */
+      --text-muted: #9BAFD4; /* Soft blue-grey for secondary text */
+      --border-subtle: #2A457E; /* Subtle blue border, no black */
+      
+      --accent-primary: #FFFFFF; /* Buttons become White */
+      --accent-foreground: #09203F; /* Button text becomes Blue */
+      --accent-highlight: #6DA3FF; /* Bright neon blue for highlighting >90% metrics */
+    }
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
