@@ -1,7 +1,6 @@
 // src/app/page.tsx
 import Hero from "@/components/sections/hero";
-import ExperienceTimeline from "@/components/sections/experiencebento"; // Make sure the import matches your filename
-import Education from "@/components/sections/education";
+import ExperienceTimeline from "@/components/sections/experience-education"; // Make sure the import matches your filename
 import Specifications from "@/components/sections/specifications";
 import Footer from "@/components/ui/footer";
 
@@ -11,7 +10,6 @@ export default function Home() {
     <main className="bg-background min-h-screen transition-colors duration-300">
       <Hero />
       <ExperienceTimeline />
-      <Education />
       <Specifications />
       <Footer />
     </main>

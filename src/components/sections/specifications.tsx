@@ -16,7 +16,12 @@ function ExternalLinkIcon({ className }: { className?: string }) {
 
 export default function Specifications() {
   return (
-    <section className="py-24 px-6 bg-background transition-colors duration-300">
+    // 1. ADDED 'relative' to this container so the gradient anchors to it
+    <section className="relative py-24 px-6 bg-background transition-colors duration-300">
+      
+      {/* 2. THE UPWARD FADE: This sits perfectly on top of this section and reaches 48px upward into the map */}
+      <div className="absolute left-0 right-0 bottom-full h-48 bg-gradient-to-t from-background to-transparent pointer-events-none z-20" />
+
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

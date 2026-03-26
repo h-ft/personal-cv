@@ -8,6 +8,10 @@ export interface Experience {
   description: string;
   highlights: string[];
   techStack: string[];
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
 }
 
 export interface Education {
@@ -16,6 +20,10 @@ export interface Education {
   location: string;
   period: string;
   gpa: string;
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
 }
 
 export const personalInfo = {
@@ -40,7 +48,8 @@ export const experiences: Experience[] = [
       "Actively developing and maintaining core BNPL services.",
       "Serving as PIC between multiple teams across different regions."
     ],
-    techStack: ["Java (Groovy)", "Golang", "MySQL", "Docker", "Redis", "Gitlab"]
+    techStack: ["Java (Groovy)", "Golang", "MySQL", "Docker", "Redis", "Gitlab"],
+    coordinates: { lat: 1.2821772162146587, lng: 103.84887709576766 }
   },
   {
     company: "ByteDance",
@@ -53,7 +62,8 @@ export const experiences: Experience[] = [
       "Developed FM fulfillment system for TikTok Shop in 3 UK cities with combined daily volumes >20k orders.",
       "Developed new services from inception to launch, planning, and building robust service infrastructure."
     ],
-    techStack: ["Golang", "PostgreSQL", "Docker", "GCP", "Redis", "NewRelic"]
+    techStack: ["Golang", "PostgreSQL", "Docker", "GCP", "Redis", "NewRelic"],
+    coordinates: { lat: -6.213054462891615, lng: 106.82136406011492 }
   },
   {
     company: "Tokopedia",
@@ -66,7 +76,8 @@ export const experiences: Experience[] = [
       "Created backend APIs to support internal clients.",
       "Monitored API performance with New Relic and led daily standups."
     ],
-    techStack: ["Golang", "PostgreSQL", "MySQL", "Redis", "Elasticsearch", "AWS S3"]
+    techStack: ["Golang", "PostgreSQL", "MySQL", "Redis", "Elasticsearch", "AWS S3"],
+    coordinates: { lat: -6.2212161066587255, lng: 106.81955193659881 }
   },
   {
     company: "TomTom N.V",
@@ -78,7 +89,8 @@ export const experiences: Experience[] = [
       "Acted as the Berlin office's primary contact for Dell support inquiries.",
       "Installed, configured, and maintained computer systems and networks."
     ],
-    techStack: ["Ubuntu", "ServiceNow", "Active Directory", "Jira"]
+    techStack: ["Ubuntu", "ServiceNow", "Active Directory", "Jira"],
+    coordinates: { lat: 52.49534833591036, lng: 13.461565706946532 }
   }
 ];
 
@@ -88,14 +100,24 @@ export const education: Education[] = [
     degree: "Master of Science in Management",
     location: "Illinois, USA",
     period: "October 2024 - Current",
-    gpa: "Current GPA: 4.0"
+    gpa: "Current GPA: 4.0",
+    coordinates: { lat: 40.10472670983722, lng: -88.22882884502218 }
   },
   {
     institution: "University of Applied Sciences (HTW) Berlin",
     degree: "Bachelor of Science",
     location: "Berlin, Germany",
     period: "April 2019 - October 2022",
-    gpa: "German Grade: 1.5/1.0 (Graduated with distinction)"
+    gpa: "German Grade: 1.5/1.0 (Graduated with distinction)",
+    coordinates: { lat: 52.45676772929891, lng: 13.52631568010534 }
+  },
+  {
+    institution: "Technische Universität Berlin",
+    degree: "Studienkolleg (Pre-University Foundation Course)",
+    location: "Berlin, Germany",
+    period: "February 2018 - December 2018",
+    gpa: "German Grade: 2.1/1.0",
+    coordinates: { lat: 52.512419, lng: 13.326907 }
   }
 ];
 
